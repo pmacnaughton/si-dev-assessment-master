@@ -1,6 +1,8 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="jumbotron">
+	<h1>Welcome to the SMS App</h1>
+	<p>Click here to <%= link_to "Sign Up", "#", class: "btn-primary btn-lg" %></p>
+</div>
 
 <%= form_tag("/sms/send", method: "post") do %>
-<!-- add form elements here -->
+  <%= render 'layouts/smsform' %>
 <% end %>
