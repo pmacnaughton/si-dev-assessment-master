@@ -1,11 +1,11 @@
 <h1>Congrats!</h1>
 
-<p>Your message "<%= params[:exampleInputMessage2] %>" </p>
-<p>has been sent to <%= params[:exampleInputNumber2] %></p> 
+<p>Your message <span class="label label-primary">"<%= params[:exampleInputMessage2] %>"</span> </p>
+<p>has been sent to <span class="label label-primary"><%= params[:exampleInputNumber2] %></span></p> 
 
 <%=
-account_sid = "AC43134ee51df9b1a58cab51f70bb131e9" # Your Account SID from www.twilio.com/console
-auth_token = "b0369273e8c0996aae597ad86458a606"   # Your Auth Token from www.twilio.com/console
+account_sid = ENV["twilio_api_key"] # Your Account SID from www.twilio.com/console
+auth_token = ENV["twilio_oauth"]   # Your Auth Token from www.twilio.com/console
 
 begin
     @client = Twilio::REST::Client.new account_sid, auth_token
